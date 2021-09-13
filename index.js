@@ -428,7 +428,10 @@ class Rsync {
       cmdProc.on('error', reject);
       cmdProc.on('close', code => {
         if (code) {
-          return reject(new Error(`rsync exited with code ${code}`));
+          let errorObj = new Error(`rsync exited with code ${code}`);
+          errorObj.code = code;
+
+          return reject(errorObj);
         }
 
         resolve(code);
@@ -626,6 +629,7 @@ const buildOption = (name, value, escapeArg) => {
     value = escapeArg(String(value));
     option += glue + value;
   }
+
   // if (arguments.length > 1 && value) {
   //   value = escapeArg(String(value));
   //   option += glue + value;
