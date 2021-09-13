@@ -381,7 +381,7 @@ class Rsync {
       this._outputHandlers.stdout = stdout;
     }
     if (typeof stderr === 'function') {
-      this._outputHandlers.stderr = stdout;
+      this._outputHandlers.stderr = stderr;
     }
 
     return this;
