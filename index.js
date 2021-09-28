@@ -102,7 +102,13 @@ class Rsync {
    * @return {Rsync}
    */
   set (option, value) {
-    this._options[option] = value;
+    if (Array.isArray(option)) {
+      option.forEach(optionArr => {
+        this._options[optionArr[0]] = optionArr[1];
+      });
+    } else {
+      this._options[option] = value;
+    }
     return this;
   }
 
