@@ -27,10 +27,10 @@ describe('accessors', function () {
       const rsync = Rsync.build({
         source: 'a.txt',
         destination: 'b.txt',
-        cwd: `${__dirname}/..`
+        cwd: path.resolve()
       });
 
-      assert.equal(path.resolve(__dirname, '..'), rsync.cwd(), 'cwd was set');
+      assert.equal(path.resolve(), rsync.cwd(), 'cwd was set');
     });
   });
 

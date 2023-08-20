@@ -413,7 +413,6 @@ class Rsync {
    * @returns {Promise<void>|ChildProcess}
    */
   execute (opts = {}) {
-
     // Register output handlers
     this.output(
       opts.stdoutHandler || this._outputHandlers.stdout,
@@ -434,7 +433,7 @@ class Rsync {
       cmdProc.on('error', reject);
       cmdProc.on('close', code => {
         if (code) {
-          let errorObj = new Error(`rsync exited with code ${code}`);
+          const errorObj = new Error(`rsync exited with code ${code}`);
           errorObj.code = code;
 
           return reject(errorObj);
@@ -456,7 +455,7 @@ class Rsync {
   //   throw new Error('flags() is deprecated; use setFlags() or unsetFlags() instead');
   // }
 
-  flags(flags) {
+  flags (flags) {
     this.setFlags(flags);
   }
 }
