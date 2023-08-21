@@ -1,8 +1,16 @@
 # Rsync ![build status](https://travis-ci.org/mattijs/node-rsync.svg?branch=master)
 
-[![NPM](https://nodei.co/npm/rsync.png?downloads=true)](https://nodei.co/npm/rsync/)
+[![NPM](https://nodei.co/npm/rsync.png?downloads=true)](https://nodei.co/npm/rsync2/)
 
 `Rsync` is a class for building and executing `rsync` commands with Node.js.
+
+## NOTE:
+
+This is the spiritual successor of the work done with the original rsync project https://github.com/mattijs/node-rsync
+
+This project closed pretty much every open ticket on that project, modernizes the project as well as adds some new/improved functionality.
+
+Since the creation of my branch off mattijs's work, that project has now been archived. I am willing to maintain this project moving forward.
 
 ## Requirements
 
