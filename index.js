@@ -328,7 +328,7 @@ class Rsync {
 
     // Add sources
     if (this.source().length) {
-      args = args.concat(this.source().map(source => unixify(source, false)));
+      args = args.concat(this.source());
     }
 
     // Add destination
